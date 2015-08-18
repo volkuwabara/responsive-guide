@@ -1,0 +1,43 @@
+body {
+  color: $font-color-basic;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  line-break: strict;
+  letter-spacing: $letter-spacing-base;
+  -webkit-font-smoothing: subpixel-antialiased;
+  vertical-align: top;
+
+  @include mediaquery-sm() {
+    letter-spacing: $letter-spacing-base-sm;
+  }
+}
+
+a {
+  color: $color-link-main;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: lighten($color-link-main, 8%);
+    text-decoration: underline;
+  }
+}
+
+#global-header {
+  padding: 20px 0;
+  background-color: $color-brand-corporate;
+  color: #fff;
+
+  h1 {
+    margin: 0;
+    font-size: $font-size-large;
+  }
+}
+
+#content {
+  padding: 40px 0 80px;
+}
+
+.box-gray {
+  background-color: $color-gray-lightest;
+}

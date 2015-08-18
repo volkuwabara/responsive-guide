@@ -1,0 +1,44 @@
+// mediaquery
+
+@mixin mediaquery-sm() {
+  @media (max-width: $screen-md - 1) {
+    @content;
+  }
+}
+
+@mixin mediaquery-md() {
+  @media (min-width: $screen-md) and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+@mixin mediaquery-lg() {
+  @media (min-width: $screen-lg ) {
+    @content;
+  }
+}
+
+@mixin mediaquery-not-sm() {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin mediaquery-not-lg() {
+  @media (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+
+@mixin mediaquery-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin mediaquery-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

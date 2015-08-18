@@ -1,0 +1,233 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: $line-height-narrow;
+  color: $headings-color;
+
+  small,
+  .small {
+    font-size: 60%;
+    line-height: 1;
+    color: $color-gray-light;
+  }
+  
+  .shoulder {
+    display: block;
+    margin-bottom: .5em;
+    font-size: $font-size-large;
+  }
+  
+  &.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &.no-margin-top {
+    margin-top: 0;
+  }
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: $font-size-h1;
+  margin-bottom: $margin-v-chapter;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  margin: $margin-v-chapter 0 ($margin-v-chapter - 10);
+}
+
+h3 {
+  font-size: $font-size-h3;
+  margin: ($margin-v-subchapter + 5) 0 ($margin-v-subchapter - 5);
+}
+
+h4 {
+  font-size: $font-size-h4;
+  margin: $margin-v-paragraph+5 0;
+}
+
+h5 {
+  font-size: $font-size-h5;
+  margin: $margin-v-paragraph 0;
+}
+
+h6 {
+  font-size: $font-size-h6;
+  margin: $margin-v-paragraph 0;
+}
+
+
+@include mediaquery-sm() {
+  h1 {
+    font-size: $font-size-h1-sm;
+    margin-bottom: $margin-v-chapter-sm;
+  }
+  h2 {
+    font-size: $font-size-h2-sm;
+    margin: $margin-v-chapter-sm 0 ($margin-v-chapter-sm - 5);
+  }
+  h3 {
+    font-size: $font-size-h3-sm;
+    margin: ($margin-v-subchapter-sm + 5) 0 ($margin-v-subchapter-sm - 5);
+  }
+  time {
+    font-size: $font-size-small;
+  }
+
+}
+
+// Inline Styling
+// -------------------------
+
+
+// Paragraphs
+p {
+  margin: .5em 0;
+  line-height: $line-height-base;
+}
+
+.col > p {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.text-large {
+  font-size: $font-size-large;
+}
+
+.text-small {
+  font-size: $font-size-small;
+}
+
+//上付き/下付き文字
+sup,
+sub {
+  font-size: 70%;
+  line-height: 1;
+  margin-right: .25em;
+
+  h1 &,
+  h2 &,
+  .title & {
+    font-size: 50%;
+  }
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+
+//リード文
+.lead {
+  @include mediaquery-not-sm() {
+    font-size: 18px;
+  }
+}
+
+//注釈
+.note,
+.notes,
+.list-notes {
+  margin: 1em 0;
+  font-size: $font-size-small;
+  color: $color-gray;
+  line-height: $line-height-narrow;
+  list-style: none;
+  li {
+    margin: .5em 0;
+  }
+}
+
+em {
+  font-style: normal;
+  color: $color-assort;
+}
+
+small,
+.small {
+  font-size: floor((100% * $font-size-small / $font-size-base));
+}
+
+mark,
+.mark {
+  background-color: yellow;
+  padding: .2em;
+}
+
+
+// Sectioning Style
+// ---------------------------------------------------
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: $color-border-light;
+  margin: $margin-v-chapter 0;
+}
+
+
+// Document Outline
+// -------------------------
+
+.chapter {
+  margin-top: $margin-v-chapter;
+  margin-bottom: $margin-v-chapter;
+}
+
+.subchapter {
+  margin-top: $margin-v-subchapter;
+  margin-bottom: $margin-v-subchapter;
+}
+
+.paragraph {
+  margin-top: $margin-v-paragraph;
+  margin-bottom: $margin-v-paragraph;
+}
+
+@include mediaquery-sm(){
+  .chapter {
+    margin-top: $margin-v-chapter-sm;
+    margin-bottom: $margin-v-chapter-sm;
+  }
+
+  .subchapter {
+    margin-top: $margin-v-subchapter-sm;
+    margin-bottom: $margin-v-subchapter-sm;
+  }
+
+  .paragraph {
+    margin-top: $margin-v-paragraph-sm;
+    margin-bottom: $margin-v-paragraph-sm;
+  }
+}
+
+.chapter,
+.subchapter {
+  &.border-top {
+    border-top: 1px solid $color-border-light;
+    &::before {
+      display: block;
+      content: "";
+      height: 0;
+      margin-top: $margin-v-subchapter;
+    }
+  }
+}

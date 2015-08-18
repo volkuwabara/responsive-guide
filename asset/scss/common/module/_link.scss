@@ -1,0 +1,15 @@
+//
+// Links
+// --------------------------------------------------
+
+a[href^="tel:"] {
+  color: $color-black;
+  &:hover {
+    color: $color-link-main;
+  }
+}
+
+a[target="_blank"],
+a[target="new"] {
+}
+
